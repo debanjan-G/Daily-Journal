@@ -1,0 +1,24 @@
+<%-include("partials/header")-%>
+
+    <h1>HOME</h1>
+    <p>
+        <%=homeContent%>
+    </p>
+
+
+
+    <% postsArray.forEach((postItem)=> { %>
+        <h2>
+            <%=postItem.postTitle%>
+        </h2>
+        <p>
+            <%=postItem.postBody.slice(0,100)+" ..."%>
+                <a href="/posts/<%=postItem.postTitle%>">Read more</a>
+        </p>
+        <% }); %>
+
+            <button class="btn btn-success" style="background-color: #1abc9c;">
+            <a href="/compose" style="color: white;text-decoration: none;font-size: 2rem;">Compose New Post</a> 
+        </button>
+           
+            <%-include("partials/footer")-%>
